@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="SallenKey_ScriptFx" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="SallenKey_ScriptFx" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="minmaxCutoff" FactoryPath="control.minmax" Bypassed="0" NodeColour="3492609792"
+            Folded="1">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="20.0" ID="Minimum" Value="20.0"/>
+          <Parameter MinValue="0.0" MaxValue="20000.0" ID="Maximum" Value="20000.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                     ID="Skew" Value="0.2299045584465861"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+        </Parameters>
+        <ModulationTargets>
+          <Connection NodeId="faust" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust1" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust2" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust3" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust4" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust5" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust6" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust7" ParameterId="Cutoff Frequency"/>
+          <Connection NodeId="faust8" ParameterId="Cutoff Frequency"/>
+        </ModulationTargets>
+      </Node>
+      <Node ID="minmaxQ" FactoryPath="control.minmax" Bypassed="0" Folded="1">
+        <ModulationTargets>
+          <Connection NodeId="faust" ParameterId="Q"/>
+          <Connection NodeId="faust3" ParameterId="Q"/>
+          <Connection NodeId="faust6" ParameterId="Q"/>
+          <Connection NodeId="faust1" ParameterId="Q"/>
+          <Connection NodeId="faust2" ParameterId="Q"/>
+          <Connection NodeId="faust4" ParameterId="Q"/>
+          <Connection NodeId="faust5" ParameterId="Q"/>
+          <Connection NodeId="faust7" ParameterId="Q"/>
+          <Connection NodeId="faust8" ParameterId="Q"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.3"/>
+          <Parameter MinValue="0.0" MaxValue="8.0" ID="Maximum" Value="8.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                     ID="Skew" Value="0.2890648263178878"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="softbypass_switch7" FactoryPath="container.chain" ShowParameters="0"
+            Bypassed="0">
+        <Nodes>
+          <Node ID="switcher4" FactoryPath="control.xfader" Bypassed="0" NodeColour="4285294489"
+                Folded="1">
+            <Properties>
+              <Property ID="NumParameters" Value="3"/>
+              <Property ID="Mode" Value="Switch"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb4" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb11" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb12" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="sb_container4" FactoryPath="container.chain" NodeColour="4285294489"
+                Bypassed="0">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="sb4" FactoryPath="container.soft_bypass" NodeColour="4285294489"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="softbypass_switch6" FactoryPath="container.chain" ShowParameters="0"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="switcher5" FactoryPath="control.xfader" Bypassed="0" NodeColour="4284977817">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb13" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb14" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sb_container5" FactoryPath="container.chain" NodeColour="4284977817"
+                            Bypassed="0">
+                        <Properties>
+                          <Property ID="IsVertical" Value="0"/>
+                        </Properties>
+                        <Nodes>
+                          <Node ID="sb13" FactoryPath="container.soft_bypass" NodeColour="4284977817"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyLpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.3" MaxValue="8.0" StepSize="0.009999999776482582"
+                                             ID="Q" SkewFactor="0.2890648263178878" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             ID="Cutoff Frequency" SkewFactor="0.2299045584686382" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb14" FactoryPath="container.soft_bypass" NodeColour="4284977817"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust1" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyLpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.2999999932944775" MaxValue="7.999999821186066" StepSize="0.009999999776482582"
+                                             ID="Q" SkewFactor="0.2890648301671579" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             ID="Cutoff Frequency" SkewFactor="0.2299045584686382" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                              <Node ID="faust2" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyLpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.2999999932944775" MaxValue="7.999999821186066" StepSize="0.009999999776482582"
+                                             ID="Q" SkewFactor="0.2890648263178878" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             ID="Cutoff Frequency" SkewFactor="0.2299045584686382" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb11" FactoryPath="container.soft_bypass" NodeColour="4285294489"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="softbypass_switch8" FactoryPath="container.chain" ShowParameters="0"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="switcher7" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288243600">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb17" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb18" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sb_container7" FactoryPath="container.chain" NodeColour="4288243600"
+                            Bypassed="0">
+                        <Properties>
+                          <Property ID="IsVertical" Value="0"/>
+                        </Properties>
+                        <Nodes>
+                          <Node ID="sb17" FactoryPath="container.soft_bypass" NodeColour="4288243600"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust3" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyHpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.3000000044703484" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb18" FactoryPath="container.soft_bypass" NodeColour="4288243600"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust4" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyHpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.3000000044703484" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                              <Node ID="faust5" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyHpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.3000000044703484" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb12" FactoryPath="container.soft_bypass" NodeColour="4285294489"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="softbypass_switch9" FactoryPath="container.chain" ShowParameters="0"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="switcher8" FactoryPath="control.xfader" Bypassed="0" NodeColour="4284979606">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb19" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb20" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sb_container8" FactoryPath="container.chain" NodeColour="4284979606"
+                            Bypassed="0">
+                        <Properties>
+                          <Property ID="IsVertical" Value="0"/>
+                        </Properties>
+                        <Nodes>
+                          <Node ID="sb19" FactoryPath="container.soft_bypass" NodeColour="4284979606"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust6" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyBpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb20" FactoryPath="container.soft_bypass" NodeColour="4284979606"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="faust7" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyBpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                              <Node ID="faust8" FactoryPath="core.faust" Bypassed="0">
+                                <Properties>
+                                  <Property ID="ClassId" Value="SallenKeyBpf"/>
+                                  <Property ID="NumParameters" Value="0"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045584686382" ID="Cutoff Frequency" Automated="1"/>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="8.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2890648244515751" ID="Q" Automated="1"/>
+                                </Parameters>
+                                <SwitchTargets/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Cutoff" MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584465861"
+                 Value="1000.0">
+        <Connections>
+          <Connection NodeId="minmaxCutoff" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Q" MinValue="0.3" MaxValue="8.0" Value="1.0" SkewFactor="0.2890648263178878">
+        <Connections>
+          <Connection NodeId="minmaxQ" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Type" MinValue="0.0" MaxValue="2.0" StepSize="1" Value="0.0">
+        <Connections>
+          <Connection NodeId="switcher4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Poles" MinValue="0.0" MaxValue="1.0" StepSize="1" Value="0.0">
+        <Connections>
+          <Connection NodeId="switcher5" ParameterId="Value"/>
+          <Connection NodeId="switcher7" ParameterId="Value"/>
+          <Connection NodeId="switcher8" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BpSpread" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections/>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

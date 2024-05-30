@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="FxBrowser" Bypassed="0" Gain="1.0" Balance="0.0"
+           VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0" packageName=""
+           BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptComboBox" id="FxBrowserComboBox" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam1" value="79.5"/>
+            <Control type="ScriptSlider" id="KnbParam2" value="-9.600000381469727"/>
+            <Control type="ScriptSlider" id="KnbParam3" value="-5.300000190734863"/>
+            <Control type="ScriptSlider" id="KnbParam4" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam5" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam6" value="2.081668171172169e-17"/>
+            <Control type="ScriptSlider" id="KnbParam7" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam8" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect1" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx1" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam9" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam10" value="0.5138999819755554"/>
+            <Control type="ScriptSlider" id="KnbParam11" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam12" value="25.0"/>
+            <Control type="ScriptSlider" id="KnbParam13" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam14" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam15" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam16" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect2" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx2" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam17" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam18" value="0.5138999819755554"/>
+            <Control type="ScriptSlider" id="KnbParam19" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam20" value="25.0"/>
+            <Control type="ScriptSlider" id="KnbParam21" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam22" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam23" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam24" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect3" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx3" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam25" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam26" value="0.5138999819755554"/>
+            <Control type="ScriptSlider" id="KnbParam27" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam28" value="25.0"/>
+            <Control type="ScriptSlider" id="KnbParam29" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam30" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam31" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam32" value="0.0"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect4" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx4" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam33" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam34" value="0.5138999819755554"/>
+            <Control type="ScriptSlider" id="KnbParam35" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam36" value="25.0"/>
+            <Control type="ScriptSlider" id="KnbParam37" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam38" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam39" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam40" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect5" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx5" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam41" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam42" value="0.5138999819755554"/>
+            <Control type="ScriptSlider" id="KnbParam43" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam44" value="25.0"/>
+            <Control type="ScriptSlider" id="KnbParam45" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam46" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam47" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam48" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect6" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx6" value="1.0"/>
+            <Control type="ScriptSlider" id="KnbParam49" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam50" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam51" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam52" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam53" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam54" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam55" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam56" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect7" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx7" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam57" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam58" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam59" value="1000.0"/>
+            <Control type="ScriptSlider" id="KnbParam60" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam61" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam62" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam63" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam64" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect8" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx8" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam65" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam66" value="1000.0"/>
+            <Control type="ScriptSlider" id="KnbParam67" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam68" value="1000.0"/>
+            <Control type="ScriptSlider" id="KnbParam69" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam70" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam71" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam72" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect9" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx9" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam73" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam74" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam75" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam76" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam77" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam78" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam79" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam80" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect10" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx10" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam81" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam82" value="500.0"/>
+            <Control type="ScriptSlider" id="KnbParam83" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam84" value="60.0"/>
+            <Control type="ScriptSlider" id="KnbParam85" value="5.0"/>
+            <Control type="ScriptSlider" id="KnbParam86" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam87" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam88" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect11" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx11" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam89" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam90" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam91" value="50.0"/>
+            <Control type="ScriptSlider" id="KnbParam92" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam93" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam94" value="0.0"/>
+            <Control type="ScriptSlider" id="KnbParam95" value="0.5"/>
+            <Control type="ScriptSlider" id="KnbParam96" value="0.5"/>
+            <Control type="ScriptButton" id="BtnRemoveEffect12" value="0.0"/>
+            <Control type="ScriptButton" id="BtnEnableFx12" value="0.0"/>
+            <Control type="ScriptButton" id="SaveButton" value="0.0"/>
+            <Control type="ScriptButton" id="LoadButton" value="0.0"/>
+            <Control type="ScriptButton" id="PRESET_Opener" value="0.0"/>
+            <Control type="ScriptButton" id="PRESET_Closer" value="0.0"/>
+            <Control type="ScriptSlider" id="Knob1" value="0.0"/>
+          </Content>
+          <UIData Source="FxBrowserUIData"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="Hardcoded Master FX" ID="HiddenPanel" Bypassed="0" Network="No network">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+        <Processor Type="ScriptFX" ID="Script FX1" Bypassed="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="AutoPanner" Version="1.0.0" AllowCompilation="1"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="WaveSynth" ID="Waveform Generator1" Bypassed="0" Gain="0.25"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
+               OctaveTranspose1="-1.0" OctaveTranspose2="-1.0" Detune1="0.0"
+               Detune2="0.0" WaveForm1="1.0" WaveForm2="6.0" Pan1="0.0" Pan2="0.0"
+               Mix="0.5" EnableSecondOscillator="1.0" PulseWidth1="0.5" PulseWidth2="0.5"
+               HardSync="0.0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="SimpleEnvelope" ID="DefaultEnvelope1" Bypassed="0" Monophonic="0.0"
+                       Retrigger="1.0" Intensity="1.0" Attack="5.0" Release="10.0" LinearMode="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Attack Time Modulation" Bypassed="0"
+                           Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot1" Bypassed="0" Network="AutoPanner"
+                       KnbDryWet="50.0" KnbRateFree="150.0" KnbRateSync="9.0" KnbWaveform="1.0"
+                       KnbDepth="50.0">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot2" Bypassed="0" Network="">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SendFX" ID="Send Effect1" Bypassed="0" Gain="-100.0" ChannelOffset="0.0"
+                       SendIndex="0.0" Smoothing="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Send Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SimpleGain" ID="Simple Gain1" Bypassed="0" Gain="0.0" Delay="0.0"
+                       Width="100.0" Balance="0.0" InvertPolarity="0.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Mix Modulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Osc2 Pitch Modulation" Bypassed="0"
+                   Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="WaveSynth" ID="Waveform Generator2" Bypassed="1" Gain="0.2089296132326126"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
+               OctaveTranspose1="0.0" OctaveTranspose2="0.0" Detune1="-18.93000030517578"
+               Detune2="21.84000015258789" WaveForm1="3.0" WaveForm2="3.0" Pan1="-54.0"
+               Pan2="62.0" Mix="0.5" EnableSecondOscillator="1.0" PulseWidth1="0.5"
+               PulseWidth2="0.5" HardSync="0.0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="SimpleEnvelope" ID="DefaultEnvelope2" Bypassed="0" Monophonic="0.0"
+                       Retrigger="1.0" Intensity="1.0" Attack="5.0" Release="10.0" LinearMode="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Attack Time Modulation" Bypassed="0"
+                           Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot3" Bypassed="0" Network="">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot4" Bypassed="0" Network="">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SendFX" ID="Send Effect2" Bypassed="0" Gain="-100.0" ChannelOffset="0.0"
+                       SendIndex="0.0" Smoothing="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Send Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SimpleGain" ID="Simple Gain2" Bypassed="0" Gain="0.0" Delay="0.0"
+                       Width="100.0" Balance="0.0" InvertPolarity="0.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Mix Modulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Osc2 Pitch Modulation" Bypassed="0"
+                   Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="WaveSynth" ID="Waveform Generator3" Bypassed="1" Gain="0.06918308138847351"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
+               OctaveTranspose1="2.0" OctaveTranspose2="2.0" Detune1="-62.72999954223633"
+               Detune2="61.83000183105469" WaveForm1="7.0" WaveForm2="4.0" Pan1="-100.0"
+               Pan2="100.0" Mix="0.5" EnableSecondOscillator="1.0" PulseWidth1="0.5"
+               PulseWidth2="0.5" HardSync="0.0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="SimpleEnvelope" ID="DefaultEnvelope3" Bypassed="0" Monophonic="0.0"
+                       Retrigger="1.0" Intensity="1.0" Attack="5.0" Release="10.0" LinearMode="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Attack Time Modulation" Bypassed="0"
+                           Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot5" Bypassed="0" Network="">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot6" Bypassed="0" Network="">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SendFX" ID="Send Effect3" Bypassed="0" Gain="-100.0" ChannelOffset="0.0"
+                       SendIndex="0.0" Smoothing="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Send Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="SimpleGain" ID="Simple Gain3" Bypassed="0" Gain="0.0" Delay="0.0"
+                       Width="100.0" Balance="0.0" InvertPolarity="0.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Delay Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Width Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Pan Modulation" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Mix Modulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Osc2 Pitch Modulation" Bypassed="0"
+                   Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="SendContainer" ID="Send Container0" Bypassed="0" Gain="1.0"
+               Balance="1.0" VoiceLimit="1.0" KillFadeTime="1.0" IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot7" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot8" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot9" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot10" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot11" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+            <Processor Type="Hardcoded Master FX" ID="FxSlot12" Bypassed="0" Network="No network">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="4" Channel0="0" Send0="-1" Channel1="1" Send1="-1"
+                     Channel2="0" Send2="-1" Channel3="1" Send3="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="LFO" value="0.0" midi_cc="-1"/>
+    <macro name="Envelope" value="0.0" midi_cc="-1"/>
+    <macro name="Velocity" value="0.0" midi_cc="-1"/>
+    <macro name="LFO2" value="0.0" midi_cc="-1"/>
+    <macro name="LFO3" value="0.0" midi_cc="-1"/>
+    <macro name="" value="0.0" midi_cc="-1"/>
+    <macro name="" value="0.0" midi_cc="-1"/>
+    <macro name="" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

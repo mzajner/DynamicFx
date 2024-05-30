@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="Panel1" x="10.0" y="70.0" width="160.0"
+             height="280.0">
+    <Component type="ScriptSlider" id="Knob1" x="10.0" y="30.0" parentComponent="Panel1"
+               text="Dry/Wet" defaultValue="50.0" max="100.0" stepSize="0.1"/>
+    <Component type="ScriptSlider" id="Knob2" x="7.0" y="77.0" parentComponent="Panel1"
+               text="Rate" defaultValue="10.0" min="0.01" max="10.0"/>
+    <Component type="ScriptSlider" id="Knob3" x="7.0" y="127.0" parentComponent="Panel1"
+               text="Feedback" defaultValue="0.5" max="100.0" stepSize="0.1"/>
+    <Component type="ScriptSlider" id="Knob4" x="7.0" y="177.0" parentComponent="Panel1"
+               text="Delay Time" defaultValue="20.0" min="0.1" max="50.0"/>
+    <Component type="ScriptLabel" id="Label1" x="10.0" y="0.0" parentComponent="Panel1"
+               text="Flanger"/>
+    <Component type="ScriptComboBox" id="ComboBox1" x="10.0" y="240.0" items="Empty&#10;TwistDelay&#10;SlapbackDelay&#10;Flanger&#10;GlistenReverb"
+               max="5" parentComponent="Panel1"/>
+  </Component>
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="430.0" y="40.0"
+             ContentType="PresetBrowser" bgColour="4143972352" itemColour="4287692721"
+             itemColour2="0" Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: false,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: false,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 1,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
+             width="140.0" height="310.0" FontSize="12.0"/>
+  <Component type="ScriptPanel" id="Panel2" x="210.0" y="70.0" width="160.0"
+             height="280.0">
+    <Component type="ScriptSlider" id="Knob5" x="10.0" y="30.0" parentComponent="Panel2"
+               text="Delay Tempo" defaultValue="18.0" max="18.0" stepSize="1.0"/>
+    <Component type="ScriptSlider" id="Knob6" x="7.0" y="77.0" parentComponent="Panel2"
+               text="Twist" defaultValue="1.0" min="-1.0"/>
+    <Component type="ScriptSlider" id="Knob7" x="7.0" y="127.0" parentComponent="Panel2"
+               text="Filter" defaultValue="0.5"/>
+    <Component type="ScriptSlider" id="Knob8" x="7.0" y="177.0" parentComponent="Panel2"
+               text="Tempo Sync" defaultValue="1.0" stepSize="1.0"/>
+    <Component type="ScriptLabel" id="Label2" x="10.0" y="0.0" parentComponent="Panel2"
+               text="SlapbackDelay"/>
+    <Component type="ScriptComboBox" id="ComboBox2" x="10.0" y="240.0" items="Empty&#10;TwistDelay&#10;SlapbackDelay&#10;Flanger&#10;GlistenReverb"
+               max="5" parentComponent="Panel2" processorId="FxSlot1"/>
+  </Component>
+</ContentProperties>

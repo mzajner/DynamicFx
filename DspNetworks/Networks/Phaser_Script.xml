@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Phaser_Script" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Phaser_Script" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Dry Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Wet Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="DRY" FactoryPath="container.chain" Bypassed="0" Folded="1">
+            <Nodes>
+              <Node ID="Dry Gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="WET" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Wet Gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="converter1" FactoryPath="control.converter" Bypassed="0"
+                    Folded="1">
+                <Properties>
+                  <Property ID="Mode" Value="Freq2Ms"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.1" MaxValue="10.0" StepSize="0.001" SkewFactor="0.2890648263178878"
+                             ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="converter" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                             Value="4.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                  <Parameter MinValue="100.0000014901161" MaxValue="10000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="converter" FactoryPath="control.converter" Bypassed="0" Folded="1">
+                <Properties>
+                  <Property ID="Mode" Value="Ms2Freq"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="smoothed_parameter_unscaled" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.01" MaxValue="10.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter_unscaled" FactoryPath="control.smoothed_parameter_unscaled"
+                    Bypassed="0" Folded="1">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="Speed"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.01" MaxValue="10.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0" Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="smoothedFeedback" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.001" MaxValue="1.0" ID="Minimum" Value="0.001"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="0.95"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothedFeedback" FactoryPath="control.smoothed_parameter_unscaled"
+                    Bypassed="0" Folded="1">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="Feedback Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax1" FactoryPath="control.minmax" Bypassed="0" Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="Notch width"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4285335856414473"
+                             ID="Value" Automated="1"/>
+                  <Parameter MinValue="10.0" MaxValue="1.0" ID="Minimum" Value="10.0"/>
+                  <Parameter MinValue="0.0" MaxValue="5000.0" ID="Maximum" Value="5000.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="faust" FactoryPath="core.faust" Bypassed="0">
+                <Properties>
+                  <Property ID="ClassId" Value="Phaser"/>
+                  <Property ID="NumParameters" Value="0"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Bypass" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Invert Internal Phaser Sum"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Vibrato Mode"
+                             Automated="1"/>
+                  <Parameter MinValue="0.01" MaxValue="10.0" StepSize="0.001000000047497451"
+                             ID="Speed" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                             ID="Notch Depth (Intensity)" Automated="1"/>
+                  <Parameter MinValue="0.001000000047497451" MaxValue="0.9499999871253968"
+                             StepSize="0.001000000047497451" ID="Feedback Gain" Automated="1"/>
+                  <Parameter MinValue="10.0" MaxValue="5000.0" StepSize="1.0" ID="Notch width"
+                             SkewFactor="0.4285335856414473" Automated="1"/>
+                  <Parameter MinValue="20.0" MaxValue="5000.0" StepSize="1.0" ID="Min Notch1 Freq"
+                             SkewFactor="0.2962928345998363" Automated="1"/>
+                  <Parameter MinValue="100.0" MaxValue="10000.0" StepSize="1.0" ID="Max Notch1 Freq"
+                             Automated="1"/>
+                  <Parameter MinValue="-60.0" MaxValue="10.0" StepSize="0.1000000014901161"
+                             ID="Phaser Output Level" Value="0.0"/>
+                  <Parameter MinValue="1.100000023841858" MaxValue="4.0" StepSize="0.001000000047497451"
+                             ID="" Value="1.5"/>
+                </Parameters>
+                <SwitchTargets/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbRateFree" MinValue="0.1" MaxValue="10.0" StepSize="0.001"
+                 SkewFactor="0.2890648263178878" Value="1.047">
+        <Connections>
+          <Connection NodeId="converter1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFeedback" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDepth" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Notch Depth (Intensity)"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbRateSync" MinValue="0.0" MaxValue="18.0" StepSize="1"
+                 Value="5.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbWidth" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmax1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbNotch" MinValue="0.0" MaxValue="1.0" Value="0.5015937499999999">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Min Notch1 Freq"/>
+          <Connection NodeId="faust" ParameterId="Max Notch1 Freq"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnTempoSync" MinValue="0.0" MaxValue="1.0" StepSize="1"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnInvert" MinValue="0.0" MaxValue="1.0" StepSize="1" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Invert Internal Phaser Sum"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnVibrato" MinValue="0.0" MaxValue="1.0" StepSize="1" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Vibrato Mode"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

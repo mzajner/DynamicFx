@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters>
+  <Parameter MinValue="1.0" MaxValue="0.1" StepSize="0.0" SkewFactor="0.9855646552954549"
+             ID="Thresh" Value="0.0"/>
+</Parameters>

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "untitled",
+    "preset": {
+      "BtnEnable": {
+        "value": 1
+      },
+      "BtnWaveShapeMorph": {
+        "value": 0
+      },
+      "KnbCrossFeedback": {
+        "value": 56
+      },
+      "KnbDelayTimeLeft": {
+        "value": 301
+      },
+      "KnbDelayTimeRight": {
+        "value": 286
+      },
+      "KnbDuty": {
+        "value": 0
+      },
+      "KnbFeedback": {
+        "value": 87
+      },
+      "KnbMix": {
+        "value": 100
+      },
+      "KnbSmooth": {
+        "value": 43
+      },
+      "KnbSmoothWindow": {
+        "value": 37
+      },
+      "KnbWaveshapeFixed": {
+        "value": 2
+      },
+      "KnbWaveshapeMorph": {
+        "value": 0
+      },
+      "KnbWindowCoefficient": {
+        "value": 0.9
+      },
+      "__sps": {
+        "Mixer": {},
+        "Mix~": {}
+      }
+    }
+  }
+]

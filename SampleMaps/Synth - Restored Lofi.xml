@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap CrossfadeGamma="0.405" ID="Synth - Restored Lofi" RRGroupAmount="1.0"
+           MicPositions=";" SaveMode="2">
+  <sample Root="36" LoKey="14" HiKey="47" LoVel="110" HiVel="127" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_36.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.13006591796875" LoopEnabled="1"
+          LoopStart="193113" LoopEnd="366369" LoopXFade="10000" SampleEnd="407077"
+          MonolithOffset="0" MonolithLength="409600" SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="110" HiVel="127" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_48.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.97760009765625" LoopEnabled="1"
+          LoopStart="187132" LoopEnd="401119" LoopXFade="10000" SampleEnd="407077"
+          MonolithOffset="409600" MonolithLength="409600" SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="71" LoVel="110" HiVel="127" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_60.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.10126972198486" LoopEnabled="1"
+          LoopStart="151315" LoopEnd="334101" LoopXFade="10000" SampleEnd="407077"
+          MonolithOffset="819200" MonolithLength="409600" SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="118" LoVel="110" HiVel="127" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_72.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="9.932812690734863" LoopEnabled="1"
+          LoopStart="72975" LoopEnd="173752" LoopXFade="10000" SampleEnd="407077"
+          MonolithOffset="1228800" MonolithLength="409600" SampleRate="44100.0"/>
+  <sample Root="36" LoKey="14" HiKey="47" LoVel="75" HiVel="109" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_36.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.13006591796875" LoopEnabled="1"
+          LoopStart="193113" LoopEnd="366369" LoopXFade="10000" Volume="-8"
+          SampleEnd="407077" MonolithOffset="1638400" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="75" HiVel="109" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_48.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.97760009765625" LoopEnabled="1"
+          LoopStart="187132" LoopEnd="401119" LoopXFade="10000" Volume="-8"
+          SampleEnd="407077" MonolithOffset="2048000" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="71" LoVel="75" HiVel="109" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_60.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.10126972198486" LoopStart="151315"
+          LoopEnd="334101" LoopXFade="10000" LoopEnabled="1" Volume="-8"
+          SampleEnd="407077" MonolithOffset="2457600" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="118" LoVel="75" HiVel="109" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_72.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="9.932812690734863" LoopStart="72975"
+          LoopEnd="173752" LoopXFade="10000" LoopEnabled="1" Volume="-8"
+          SampleEnd="407077" MonolithOffset="2867200" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="36" LoKey="14" HiKey="47" LoVel="30" HiVel="74" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_36.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.13006591796875" LoopEnabled="1"
+          LoopStart="193113" LoopEnd="366369" LoopXFade="10000" Volume="-10"
+          SampleEnd="407077" MonolithOffset="3276800" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="30" HiVel="74" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_48.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.97760009765625" LoopEnabled="1"
+          LoopStart="187132" LoopEnd="401119" LoopXFade="10000" Volume="-10"
+          SampleEnd="407077" MonolithOffset="3686400" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="71" LoVel="30" HiVel="74" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_60.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.10126972198486" LoopStart="151315"
+          LoopEnd="334101" LoopXFade="10000" LoopEnabled="1" Volume="-10"
+          SampleEnd="407077" MonolithOffset="4096000" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="118" LoVel="30" HiVel="74" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_72.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="9.932812690734863" LoopStart="72975"
+          LoopEnd="173752" LoopXFade="10000" LoopEnabled="1" Volume="-10"
+          SampleEnd="407077" MonolithOffset="4505600" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="36" LoKey="14" HiKey="47" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_36.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.13006591796875" LoopEnabled="1"
+          LoopStart="193113" LoopEnd="366369" LoopXFade="10000" Volume="-18"
+          SampleEnd="407077" MonolithOffset="4915200" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="48" LoKey="48" HiKey="59" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_48.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.97760009765625" LoopEnabled="1"
+          LoopStart="187132" LoopEnd="401119" LoopXFade="10000" Volume="-18"
+          SampleEnd="407077" MonolithOffset="5324800" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="71" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_60.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="11.10126972198486" LoopStart="151315"
+          LoopEnd="334101" LoopXFade="10000" LoopEnabled="1" Volume="-18"
+          SampleEnd="407077" MonolithOffset="5734400" MonolithLength="409600"
+          SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="118" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="D:\Designed Sounds\Lofi Pulse\lofipulse_72.wav" Duplicate="1"
+          Normalized="1" NormalizedPeak="9.932812690734863" LoopStart="72975"
+          LoopEnd="173752" LoopXFade="10000" LoopEnabled="1" Volume="-18"
+          SampleEnd="407077" MonolithOffset="6144000" MonolithLength="409600"
+          SampleRate="44100.0"/>
+</samplemap>

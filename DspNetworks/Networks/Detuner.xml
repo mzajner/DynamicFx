@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Detuner" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="Detuner" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Dry Gain" ParameterId="Gain"/>
+              <Connection NodeId="Dry Gain" ParameterId="ResetValue"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Wet Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
+        <Nodes>
+          <Node ID="DRY" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Dry Gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="WET" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Wet Gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue"/>
+                </Parameters>
+              </Node>
+              <Node ID="MidSide" FactoryPath="control.xfader" Bypassed="0" NodeColour="4278203903">
+                <Properties>
+                  <Property ID="NumParameters" Value="2"/>
+                  <Property ID="Mode" Value="RMS"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain1" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="splitMidSide" FactoryPath="container.split" Bypassed="0">
+                <Nodes>
+                  <Node ID="chainMid" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="faust" FactoryPath="core.faust" Bypassed="0" NodeColour="4278203903">
+                        <Properties>
+                          <Property ID="ClassId" Value="MicroShifter"/>
+                          <Property ID="NumParameters" Value="0"/>
+                        </Properties>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ON/OFF" Value="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.001000000047497451"
+                                     ID="Volume" Value="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                     ID="dry_wet" Value="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                                     ID="gain" Value="1.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="100.0" StepSize="0.1000000014901161"
+                                     ID="shift" Automated="1"/>
+                          <Parameter MinValue="10.0" MaxValue="1000.0" StepSize="1.0" ID="window"/>
+                        </Parameters>
+                        <SwitchTargets/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chainSides" FactoryPath="container.chain" Bypassed="0" NodeColour="4278224127">
+                    <Nodes>
+                      <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="-3.0" StepSize="0.1000000014901161"
+                                     SkewFactor="10.85561787371386" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-1.29999852925539"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="softbypass_switch3" FactoryPath="container.chain" ShowParameters="1"
+                            Bypassed="0" NodeColour="4278224127">
+                        <Nodes>
+                          <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4284979568">
+                            <Properties>
+                              <Property ID="NumParameters" Value="2"/>
+                              <Property ID="Mode" Value="Switch"/>
+                            </Properties>
+                            <SwitchTargets>
+                              <SwitchTarget>
+                                <Connections>
+                                  <Connection NodeId="sb1" ParameterId="Bypassed"/>
+                                </Connections>
+                              </SwitchTarget>
+                              <SwitchTarget>
+                                <Connections>
+                                  <Connection NodeId="sb2" ParameterId="Bypassed"/>
+                                </Connections>
+                              </SwitchTarget>
+                            </SwitchTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1" ID="Value" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4284979568"
+                                Bypassed="0">
+                            <Properties>
+                              <Property ID="IsVertical" Value="0"/>
+                            </Properties>
+                            <Nodes>
+                              <Node ID="sb1" FactoryPath="container.soft_bypass" NodeColour="4284979568"
+                                    Bypassed="0">
+                                <Nodes>
+                                  <Node ID="split1" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
+                                    <Nodes>
+                                      <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+                                        <Nodes>
+                                          <Node ID="faust1" FactoryPath="core.faust" Bypassed="0" NodeColour="4278203903">
+                                            <Properties>
+                                              <Property ID="ClassId" Value="MicroShifter"/>
+                                              <Property ID="NumParameters" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ON/OFF" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.001000000047497451"
+                                                         ID="Volume" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                                         ID="dry_wet" Value="100.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                                                         ID="gain" Value="1.0"/>
+                                              <Parameter MinValue="-100.0" MaxValue="100.0" StepSize="0.1000000014901161"
+                                                         ID="shift" Automated="1"/>
+                                              <Parameter MinValue="10.0" MaxValue="1000.0" StepSize="1.0" ID="window"
+                                                         Value="75.0"/>
+                                            </Parameters>
+                                            <SwitchTargets/>
+                                          </Node>
+                                          <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0">
+                                            <Parameters>
+                                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+                                        <Nodes>
+                                          <Node ID="faust2" FactoryPath="core.faust" Bypassed="0" NodeColour="4278203903">
+                                            <Properties>
+                                              <Property ID="ClassId" Value="MicroShifter"/>
+                                              <Property ID="NumParameters" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ON/OFF" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.001000000047497451"
+                                                         ID="Volume" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                                         ID="dry_wet" Value="100.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                                                         ID="gain" Value="1.0"/>
+                                              <Parameter MinValue="-100.0" MaxValue="100.0" StepSize="0.1000000014901161"
+                                                         ID="shift" Automated="1"/>
+                                              <Parameter MinValue="10.0" MaxValue="1000.0" StepSize="1.0" ID="window"
+                                                         Value="75.0"/>
+                                            </Parameters>
+                                            <SwitchTargets/>
+                                          </Node>
+                                          <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0">
+                                            <Parameters>
+                                              <Parameter MinValue="1.0" MaxValue="-1.0" ID="Pan" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Properties>
+                                  <Property ID="SmoothingTime" Value="20"/>
+                                </Properties>
+                                <Parameters/>
+                              </Node>
+                              <Node ID="sb2" FactoryPath="container.soft_bypass" NodeColour="4284979568"
+                                    Bypassed="0">
+                                <Nodes>
+                                  <Node ID="split2" FactoryPath="container.split" Bypassed="0" ShowParameters="0">
+                                    <Nodes>
+                                      <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
+                                        <Nodes>
+                                          <Node ID="faust3" FactoryPath="core.faust" Bypassed="0" NodeColour="4278203903">
+                                            <Properties>
+                                              <Property ID="ClassId" Value="MicroShifter"/>
+                                              <Property ID="NumParameters" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ON/OFF" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.001000000047497451"
+                                                         ID="Volume" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                                         ID="dry_wet" Value="99.99999776482582"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                                                         ID="gain" Value="1.0"/>
+                                              <Parameter MinValue="-100.0" MaxValue="100.0" StepSize="0.1000000014901161"
+                                                         ID="shift" Automated="1"/>
+                                              <Parameter MinValue="10.0" MaxValue="1000.0" StepSize="1.0" ID="window"
+                                                         Value="75.0"/>
+                                            </Parameters>
+                                            <SwitchTargets/>
+                                          </Node>
+                                          <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0">
+                                            <Parameters>
+                                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+                                        <Nodes>
+                                          <Node ID="faust4" FactoryPath="core.faust" Bypassed="0" NodeColour="4278203903">
+                                            <Properties>
+                                              <Property ID="ClassId" Value="MicroShifter"/>
+                                              <Property ID="NumParameters" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="ON/OFF" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.001000000047497451"
+                                                         ID="Volume" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="100.0" StepSize="0.009999999776482582"
+                                                         ID="dry_wet" Value="99.99999776482582"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                                                         ID="gain" Value="1.0"/>
+                                              <Parameter MinValue="-100.0" MaxValue="100.0" StepSize="0.1000000014901161"
+                                                         ID="shift" Automated="1"/>
+                                              <Parameter MinValue="10.0" MaxValue="1000.0" StepSize="1.0" ID="window"
+                                                         Value="75.0"/>
+                                            </Parameters>
+                                            <SwitchTargets/>
+                                          </Node>
+                                          <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0">
+                                            <Parameters>
+                                              <Parameter MinValue="1.0" MaxValue="-1.0" ID="Pan" Value="1.0"/>
+                                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Properties>
+                                  <Property ID="SmoothingTime" Value="20"/>
+                                </Properties>
+                                <Parameters/>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbCenterDetune" MinValue="-100.0" MaxValue="100.0" Value="25.00000186264513"
+                 StepSize="0.1000000014901161">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="shift"/>
+          <Connection NodeId="faust3" ParameterId="shift"/>
+          <Connection NodeId="faust4" ParameterId="shift"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbSideDetune" MinValue="-100.0" MaxValue="100.0" Value="-0.2999985143542428"
+                 StepSize="0.1000000014901161">
+        <Connections>
+          <Connection NodeId="faust1" ParameterId="shift"/>
+          <Connection NodeId="faust2" ParameterId="shift"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbMidSideBalance" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="MidSide" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnDetuneSync" MinValue="0.0" MaxValue="1.0" StepSize="1"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="switcher" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

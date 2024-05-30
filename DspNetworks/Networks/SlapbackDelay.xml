@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="SlapbackDelay" Version="1.0.0" AllowCompilation="1" SuspendOnSilence="1">
+  <Node FactoryPath="container.chain" ID="SlapbackDelay" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="dryWetXfade" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain2" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="dryWetSplit" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="DRYChain" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="WET" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="tempo_sync1" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="delay(ms)"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.5" ID="UnsyncedTime" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax1" FactoryPath="control.minmax" Bypassed="0" Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="feedback"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" StepSize="0.01"
+                             SkewFactor="0.5"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.95" ID="Maximum" Value="1.95"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="faust" FactoryPath="core.faust" Bypassed="0" Folded="1">
+                <Properties>
+                  <Property ID="ClassId" Value="EchoplexDelay"/>
+                  <Property ID="NumParameters" Value="0"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="delay(ms)"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.999999955296516" StepSize="0.009999999776482582"
+                             SkewFactor="1.000000032246748" ID="feedback" Automated="1"/>
+                </Parameters>
+                <SwitchTargets/>
+              </Node>
+              <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0" Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="svf" ParameterId="Mode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="Maximum" Value="2.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="svf" FactoryPath="filters.svf" Bypassed="0">
+                <ComplexData>
+                  <Filters>
+                    <Filter Index="-1"/>
+                  </Filters>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                             ID="Frequency" Automated="1"/>
+                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="Q" Value="1.0"/>
+                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                             ID="Smoothing" Value="0.009999999776482582"/>
+                  <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="dryWetXfade" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbTimeFree" MinValue="1.0" MaxValue="2000.0" SkewFactor="0.4994588983645233"
+                 Value="250.0">
+        <Connections>
+          <Connection NodeId="tempo_sync1" ParameterId="UnsyncedTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFeedback" MinValue="0.0" MaxValue="200.0" SkewFactor="0.5"
+                 Value="50.0">
+        <Connections>
+          <Connection NodeId="minmax1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFilter" MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584686382"
+                 Value="1000.0">
+        <Connections>
+          <Connection NodeId="svf" ParameterId="Frequency"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbTimeSync" MinValue="0.0" MaxValue="18.0" StepSize="1"
+                 Value="5.0">
+        <Connections>
+          <Connection NodeId="tempo_sync1" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFilterType" MinValue="0.0" MaxValue="2.0" StepSize="1"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnTempoSync" MinValue="0.0" MaxValue="1.0" StepSize="1"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync1" ParameterId="Enabled"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

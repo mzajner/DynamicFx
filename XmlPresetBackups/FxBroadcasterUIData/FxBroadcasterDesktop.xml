@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptSlider" id="Knob1" x="100" y="0" processorId="EffectSlot1"
+             parameterId="Cutoff frequency"/>
+  <Component type="ScriptPanel" id="Panel4" x="0" y="50"/>
+  <Component type="ScriptPanel" id="Panel3" x="100" y="50"/>
+  <Component type="ScriptPanel" id="Panel2" x="200" y="50"/>
+  <Component type="ScriptPanel" id="Panel1" x="300" y="50"/>
+  <Component type="ScriptSlider" id="Knob2" x="0" y="50" parameterId="100"/>
+  <Component type="ScriptSlider" id="Knob3" x="0" y="100" parameterId="100"/>
+  <Component type="ScriptSlider" id="Knob4" x="0" y="150" parameterId="100"/>
+</ContentProperties>

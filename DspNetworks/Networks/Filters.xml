@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Filters" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Filters" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="freq_split3" FactoryPath="container.split" ShowParameters="0"
+            Bypassed="0">
+        <Parameters/>
+        <Nodes>
+          <Node ID="band1" FactoryPath="container.chain" Bypassed="1" ShowParameters="1"
+                Folded="1">
+            <Nodes>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax1" FactoryPath="control.minmax" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="svf1" ParameterId="Mode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" ID="Maximum" Value="2.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="svf1" FactoryPath="filters.svf" Bypassed="0">
+                <ComplexData>
+                  <Filters>
+                    <Filter Index="0"/>
+                  </Filters>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                             ID="Frequency" Automated="1"/>
+                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="Q" Automated="1"/>
+                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                             ID="Smoothing" Value="0.009999999776482582"/>
+                  <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="band2" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="softbypass_switch8" FactoryPath="container.chain" ShowParameters="1"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="switcher2" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288251751">
+                    <Properties>
+                      <Property ID="NumParameters" Value="7"/>
+                      <Property ID="Mode" Value="Switch"/>
+                    </Properties>
+                    <SwitchTargets>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb8" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb12" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb14" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb17" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb18" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb19" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="sb20" ParameterId="Bypassed"/>
+                        </Connections>
+                      </SwitchTarget>
+                    </SwitchTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="sb_container2" FactoryPath="container.chain" NodeColour="4288251751"
+                        Bypassed="0">
+                    <Properties>
+                      <Property ID="IsVertical" Value="0"/>
+                    </Properties>
+                    <Nodes>
+                      <Node ID="sb8" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0">
+                        <Nodes>
+                          <Node ID="softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
+                                Bypassed="0" Folded="1">
+                            <Nodes>
+                              <Node ID="switcher3" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288243568">
+                                <Properties>
+                                  <Property ID="NumParameters" Value="3"/>
+                                  <Property ID="Mode" Value="Switch"/>
+                                </Properties>
+                                <SwitchTargets>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb13" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb15" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb16" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                </SwitchTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="sb_container3" FactoryPath="container.chain" NodeColour="4288243568"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="IsVertical" Value="0"/>
+                                </Properties>
+                                <Nodes>
+                                  <Node ID="sb13" FactoryPath="container.soft_bypass" NodeColour="4288243568"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="one_pole1" FactoryPath="filters.one_pole" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="Q" Automated="1"/>
+                                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="sb15" FactoryPath="container.soft_bypass" NodeColour="4288243568"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="one_pole2" FactoryPath="filters.one_pole" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="Q" Automated="1"/>
+                                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="sb16" FactoryPath="container.soft_bypass" NodeColour="4288243568"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="minmaxlo" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="one_pole3" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4989176142699714"
+                                                     ID="Value" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="200.0" ID="Minimum" Value="200.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="20000.0" ID="Maximum" Value="20000.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="one_pole3" FactoryPath="filters.one_pole" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.4989176142699714"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="Q" Automated="1"/>
+                                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="minmaxhi" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="one_pole4" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.185895085224213"
+                                                     ID="Value" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="20.0" ID="Minimum" Value="20.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="15000.0" ID="Maximum" Value="15000.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="one_pole4" FactoryPath="filters.one_pole" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.185895085224213"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="Q" Automated="1"/>
+                                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                                     ID="Smoothing" Value="0.009999999776482582"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Switch" Automated="1">
+                                <Connections>
+                                  <Connection NodeId="switcher3" ParameterId="Value"/>
+                                </Connections>
+                              </Parameter>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb12" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="switcher1" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288112537">
+                                <Properties>
+                                  <Property ID="NumParameters" Value="3"/>
+                                  <Property ID="Mode" Value="Switch"/>
+                                </Properties>
+                                <SwitchTargets>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb9" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb10" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                  <SwitchTarget>
+                                    <Connections>
+                                      <Connection NodeId="sb11" ParameterId="Bypassed"/>
+                                    </Connections>
+                                  </SwitchTarget>
+                                </SwitchTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="smoothed_parameter_unscaled" FactoryPath="control.smoothed_parameter_unscaled"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="jlinkwitzriley" ParameterId="Frequency"/>
+                                  <Connection NodeId="jlinkwitzriley1" ParameterId="Frequency"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584686382"
+                                             ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Value="100.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="sb_container1" FactoryPath="container.chain" NodeColour="4288112537"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="IsVertical" Value="0"/>
+                                </Properties>
+                                <Nodes>
+                                  <Node ID="sb9" FactoryPath="container.soft_bypass" NodeColour="4288112537"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="jlinkwitzriley1" FactoryPath="jdsp.jlinkwitzriley" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="sb10" FactoryPath="container.soft_bypass" NodeColour="4288112537"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="jlinkwitzriley" FactoryPath="jdsp.jlinkwitzriley" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="sb11" FactoryPath="container.soft_bypass" NodeColour="4288112537"
+                                        Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="minmaxlo1" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="jlinkwitzriley2" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.4989176142699714"
+                                                     ID="Value" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="200.0" ID="Minimum" Value="200.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="20000.0" ID="Maximum" Value="20000.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="jlinkwitzriley2" FactoryPath="jdsp.jlinkwitzriley" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="minmaxhi1" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="jlinkwitzriley3" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.185895085224213"
+                                                     ID="Value" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="20.0" ID="Minimum" Value="20.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="15000.0" ID="Maximum" Value="15000.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="jlinkwitzriley3" FactoryPath="jdsp.jlinkwitzriley" Bypassed="0">
+                                        <ComplexData>
+                                          <Filters>
+                                            <Filter Index="-1"/>
+                                          </Filters>
+                                        </ComplexData>
+                                        <Parameters>
+                                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                                     ID="Frequency" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Value="1.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Properties>
+                                      <Property ID="SmoothingTime" Value="20"/>
+                                    </Properties>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
+                              </Node>
+                            </Nodes>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Switch" Automated="1">
+                                <Connections>
+                                  <Connection NodeId="switcher1" ParameterId="Value"/>
+                                </Connections>
+                              </Parameter>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb14" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="svf2" ParameterId="Mode"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" ID="Maximum" Value="2.0"/>
+                              <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                         ID="Skew" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="svf2" FactoryPath="filters.svf" Bypassed="0">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb17" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0">
+                        <Nodes>
+                          <Node ID="SallenKey_ScriptFx" FactoryPath="project.SallenKey_ScriptFx"
+                                Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Cutoff" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="8.0" SkewFactor="0.2890648245811462"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Poles" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="100.0" ID="BpSpread" Value="50.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb18" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0">
+                        <Nodes>
+                          <Node ID="Korg_ScriptFx" FactoryPath="project.Korg_ScriptFx" Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Cutoff" Automated="1"/>
+                              <Parameter MinValue="0.699999988079071" MaxValue="10.0" SkewFactor="0.2018490880727768"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Poles" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="100.0" ID="BpSpread" Value="100.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb19" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0">
+                        <Nodes>
+                          <Node ID="Oberheim_ScriptFx" FactoryPath="project.Oberheim_ScriptFx"
+                                Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Cutoff" Automated="1"/>
+                              <Parameter MinValue="0.699999988079071" MaxValue="10.0" SkewFactor="0.2018490880727768"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Poles" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="sb20" FactoryPath="container.soft_bypass" NodeColour="4288251751"
+                            Bypassed="0">
+                        <Nodes>
+                          <Node ID="Moog_ScriptFx" FactoryPath="project.Moog_ScriptFx" Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Cutoff" Automated="1"/>
+                              <Parameter MinValue="0.699999988079071" MaxValue="10.0" SkewFactor="0.2018490880727768"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Type" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Poles" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Properties>
+                          <Property ID="SmoothingTime" Value="20"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Switch" Automated="1">
+                    <Connections>
+                      <Connection NodeId="switcher2" ParameterId="Value"/>
+                    </Connections>
+                  </Parameter>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbCutoff" MinValue="20.0" MaxValue="20000.0" StepSize="1.0"
+                 SkewFactor="0.2299045584686382" Value="20000.0">
+        <Connections>
+          <Connection NodeId="one_pole1" ParameterId="Frequency"/>
+          <Connection NodeId="one_pole2" ParameterId="Frequency"/>
+          <Connection NodeId="svf2" ParameterId="Frequency"/>
+          <Connection NodeId="minmaxlo" ParameterId="Value"/>
+          <Connection NodeId="minmaxhi" ParameterId="Value"/>
+          <Connection NodeId="minmaxlo1" ParameterId="Value"/>
+          <Connection NodeId="minmaxhi1" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter_unscaled" ParameterId="Value"/>
+          <Connection NodeId="svf1" ParameterId="Frequency"/>
+          <Connection NodeId="SallenKey_ScriptFx" ParameterId="Cutoff"/>
+          <Connection NodeId="Korg_ScriptFx" ParameterId="Cutoff"/>
+          <Connection NodeId="Oberheim_ScriptFx" ParameterId="Cutoff"/>
+          <Connection NodeId="Moog_ScriptFx" ParameterId="Cutoff"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbQ" MinValue="0.3" MaxValue="9.9" SkewFactor="0.2647178086067324"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="svf1" ParameterId="Q"/>
+          <Connection NodeId="one_pole1" ParameterId="Q"/>
+          <Connection NodeId="one_pole2" ParameterId="Q"/>
+          <Connection NodeId="one_pole3" ParameterId="Q"/>
+          <Connection NodeId="one_pole4" ParameterId="Q"/>
+          <Connection NodeId="svf2" ParameterId="Q"/>
+          <Connection NodeId="SallenKey_ScriptFx" ParameterId="Q"/>
+          <Connection NodeId="Korg_ScriptFx" ParameterId="Q"/>
+          <Connection NodeId="Oberheim_ScriptFx" ParameterId="Q"/>
+          <Connection NodeId="Moog_ScriptFx" ParameterId="Q"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbMode" MinValue="0.0" MaxValue="2.0" StepSize="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="softbypass_switch4" ParameterId="Switch"/>
+          <Connection NodeId="softbypass_switch5" ParameterId="Switch"/>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+          <Connection NodeId="minmax1" ParameterId="Value"/>
+          <Connection NodeId="SallenKey_ScriptFx" ParameterId="Type"/>
+          <Connection NodeId="Korg_ScriptFx" ParameterId="Type"/>
+          <Connection NodeId="Oberheim_ScriptFx" ParameterId="Type"/>
+          <Connection NodeId="Moog_ScriptFx" ParameterId="Type"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbType" MinValue="1.0" MaxValue="7.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="softbypass_switch8" ParameterId="Switch"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

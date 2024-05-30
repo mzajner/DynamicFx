@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Preset Version="1.0.0">
+  <Content Processor="Interface">
+    <Control type="ScriptComboBox" id="FxBrowserComboBox" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam1" value="0.6252968907356262"/>
+    <Control type="ScriptSlider" id="KnbParam2" value="500.0"/>
+    <Control type="ScriptSlider" id="KnbParam3" value="9.0"/>
+    <Control type="ScriptSlider" id="KnbParam4" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam5" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam6" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam7" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam8" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect1" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx1" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam9" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam10" value="0.5138999819755554"/>
+    <Control type="ScriptSlider" id="KnbParam11" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam12" value="25.0"/>
+    <Control type="ScriptSlider" id="KnbParam13" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam14" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam15" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam16" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect2" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx2" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam17" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam18" value="0.5138999819755554"/>
+    <Control type="ScriptSlider" id="KnbParam19" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam20" value="25.0"/>
+    <Control type="ScriptSlider" id="KnbParam21" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam22" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam23" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam24" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect3" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx3" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam25" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam26" value="0.5138999819755554"/>
+    <Control type="ScriptSlider" id="KnbParam27" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam28" value="25.0"/>
+    <Control type="ScriptSlider" id="KnbParam29" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam30" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam31" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam32" value="0.0"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect4" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx4" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam33" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam34" value="0.5138999819755554"/>
+    <Control type="ScriptSlider" id="KnbParam35" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam36" value="25.0"/>
+    <Control type="ScriptSlider" id="KnbParam37" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam38" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam39" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam40" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect5" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx5" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam41" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam42" value="0.5138999819755554"/>
+    <Control type="ScriptSlider" id="KnbParam43" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam44" value="25.0"/>
+    <Control type="ScriptSlider" id="KnbParam45" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam46" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam47" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam48" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect6" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx6" value="1.0"/>
+    <Control type="ScriptSlider" id="KnbParam49" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam50" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam51" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam52" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam53" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam54" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam55" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam56" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect7" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx7" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam57" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam58" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam59" value="1000.0"/>
+    <Control type="ScriptSlider" id="KnbParam60" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam61" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam62" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam63" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam64" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect8" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx8" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam65" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam66" value="1000.0"/>
+    <Control type="ScriptSlider" id="KnbParam67" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam68" value="1000.0"/>
+    <Control type="ScriptSlider" id="KnbParam69" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam70" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam71" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam72" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect9" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx9" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam73" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam74" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam75" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam76" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam77" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam78" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam79" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam80" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect10" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx10" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam81" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam82" value="500.0"/>
+    <Control type="ScriptSlider" id="KnbParam83" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam84" value="60.0"/>
+    <Control type="ScriptSlider" id="KnbParam85" value="5.0"/>
+    <Control type="ScriptSlider" id="KnbParam86" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam87" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam88" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect11" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx11" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam89" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam90" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam91" value="50.0"/>
+    <Control type="ScriptSlider" id="KnbParam92" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam93" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam94" value="0.0"/>
+    <Control type="ScriptSlider" id="KnbParam95" value="0.5"/>
+    <Control type="ScriptSlider" id="KnbParam96" value="0.5"/>
+    <Control type="ScriptButton" id="BtnRemoveEffect12" value="0.0"/>
+    <Control type="ScriptButton" id="BtnEnableFx12" value="0.0"/>
+    <Control type="ScriptButton" id="SaveButton" value="0.0"/>
+    <Control type="ScriptButton" id="LoadButton" value="0.0"/>
+    <Control type="ScriptButton" id="PRESET_Opener" value="0.0"/>
+    <Control type="ScriptButton" id="PRESET_Closer" value="0.0"/>
+  </Content>
+  <Modules>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot1" Bypassed="0" Network="Grains"
+               KnbDryWet="0.6252968907356262" KnbTimeFree="500.0" TimeSync="9.0"
+               KnbSize="50.0" KnbProbability="50.0" BtnTempoSync="0.0">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot2" Bypassed="0" Network="">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot3" Bypassed="0" Network="">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot4" Bypassed="0" Network="">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot5" Bypassed="0" Network="Flanger"
+               KnbDryWet="50.0" KnbRateFree="0.5138999819755554" KnbFeedback="50.0"
+               KnbDelayTime="25.0" KnbRateSync="5.0" BtnTempoSync="0.0">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot6" Bypassed="0" Network="">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot7" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot8" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot9" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot10" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot11" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="Hardcoded Master FX" ID="FxSlot12" Bypassed="0" Network="No network">
+      <ChildProcessors/>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </Modules>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Preset>

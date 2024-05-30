@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="SoftClip" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="SoftClip" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Dry Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Wet Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="DRY" FactoryPath="container.chain" Bypassed="0" Folded="1">
+            <Nodes>
+              <Node ID="Dry Gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="WET" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Wet Gain" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxIn" FactoryPath="control.minmax" Bypassed="0" NodeColour="4294901760"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="VolumeInGain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Minimum" Value="-100.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="6.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Maximum" Value="6.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="VolumeInGain" FactoryPath="core.gain" Bypassed="0" NodeColour="4294901760"
+                    Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="6.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxDrive" FactoryPath="control.minmax" Bypassed="0" NodeColour="4278190335"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust2" ParameterId="drive"/>
+                  <Connection NodeId="faust" ParameterId="drive"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxSoft" FactoryPath="control.minmax" Bypassed="0" NodeColour="4278190335"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust2" ParameterId="softclip"/>
+                  <Connection NodeId="faust" ParameterId="softclip"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxClip1" FactoryPath="control.minmax" Bypassed="0" NodeColour="4278190335"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="faust2" ParameterId="clipping"/>
+                  <Connection NodeId="faust" ParameterId="clipping"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="multi" FactoryPath="container.multi" Bypassed="0">
+                <Nodes>
+                  <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="faust2" FactoryPath="core.faust" Bypassed="0" NodeColour="4278190335">
+                        <Properties>
+                          <Property ID="ClassId" Value="SoftClip"/>
+                          <Property ID="NumParameters" Value="0"/>
+                        </Properties>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                     ID="clipping" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="drive" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="softclip" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="squeeze" Automated="1"/>
+                        </Parameters>
+                        <SwitchTargets/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="faust" FactoryPath="core.faust" Bypassed="0" NodeColour="4278190335">
+                        <Properties>
+                          <Property ID="ClassId" Value="SoftClip"/>
+                          <Property ID="NumParameters" Value="0"/>
+                        </Properties>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="clipping" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="drive" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.009999999776482582"
+                                     ID="softclip" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="0.9999999776482582" StepSize="0.009999999776482582"
+                                     ID="squeeze" Automated="1"/>
+                        </Parameters>
+                        <SwitchTargets/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="minmaxOut" FactoryPath="control.minmax" Bypassed="0" NodeColour="4294901760"
+                    Folded="1">
+                <ModulationTargets>
+                  <Connection NodeId="VolumeOutGain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Minimum" Value="-100.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="6.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Maximum" Value="6.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="VolumeOutGain" FactoryPath="core.gain" Bypassed="0" NodeColour="4294901760"
+                    Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="6.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="DryWet" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbClip" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmaxClip1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDrive" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmaxDrive" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbSoft" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmaxSoft" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnSquash" MinValue="0.0" MaxValue="1.0" StepSize="1" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust2" ParameterId="squeeze"/>
+          <Connection NodeId="faust" ParameterId="squeeze"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

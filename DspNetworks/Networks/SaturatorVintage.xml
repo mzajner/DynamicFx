@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="SaturatorVintage" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="SaturatorVintage" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="svf_eq" FactoryPath="filters.svf_eq" Bypassed="0">
+        <ComplexData>
+          <Filters>
+            <Filter Index="-1"/>
+          </Filters>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="200.0" MaxValue="5000.0" SkewFactor="0.3868528072345416"
+                     ID="Frequency" Automated="1"/>
+          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                     ID="Q" Value="1.0"/>
+          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="6.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                     ID="Smoothing" Value="0.009999999776482582"/>
+          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Value="4.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="smoothed_parameter_unscaled2" FactoryPath="control.smoothed_parameter_unscaled"
+            Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="Mode" Value="Linear Ramp"/>
+        </Properties>
+        <ModulationTargets>
+          <Connection NodeId="RnboTubeTapeSaturation" ParameterId="KnbDryWet"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="100.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     ID="SmoothingTime" Value="100.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="smoothed_parameter_unscaled1" FactoryPath="control.smoothed_parameter_unscaled"
+            Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="Mode" Value="Linear Ramp"/>
+        </Properties>
+        <ModulationTargets>
+          <Connection NodeId="RnboTubeTapeSaturation" ParameterId="KnbDrive"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="100.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     ID="SmoothingTime" Value="100.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="smoothed_parameter_unscaled" FactoryPath="control.smoothed_parameter_unscaled"
+            Bypassed="0" Folded="1">
+        <Properties>
+          <Property ID="Mode" Value="Linear Ramp"/>
+        </Properties>
+        <ModulationTargets>
+          <Connection NodeId="RnboTubeTapeSaturation" ParameterId="KnbBlend"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="100.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     ID="SmoothingTime" Value="100.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="RnboTubeTapeSaturation" FactoryPath="project.RnboTubeTapeSaturation"
+            Bypassed="0">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbDryWet" Automated="1"/>
+          <Parameter MinValue="-48.0" MaxValue="48.0" ID="KnbInput" Value="0.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="100.0" ID="KnbDrive"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbBlend" Automated="1"/>
+          <Parameter MinValue="-24.0" MaxValue="12.0" ID="KnbOutput" Value="0.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" Value="100.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter_unscaled2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDrive" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter_unscaled1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbBlend" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter_unscaled" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbTone" MinValue="200.0" MaxValue="5000.0" SkewFactor="0.3868528072345416"
+                 Value="1000.0">
+        <Connections>
+          <Connection NodeId="svf_eq" ParameterId="Frequency"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

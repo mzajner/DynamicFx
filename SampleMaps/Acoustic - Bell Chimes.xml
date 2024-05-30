@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<samplemap ID="Acoustic - Bell Chimes" RRGroupAmount="1.0" MicPositions=";"
+           CrossfadeGamma="1.0" SaveMode="2">
+  <sample Root="48" LoKey="12" HiKey="54" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_48.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.975686073303223"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="0"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="55" LoKey="55" HiKey="59" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_55.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.938100099563599"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="327680"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="66" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_60.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913049936294556"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="655360"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="67" LoKey="67" HiKey="71" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_67.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.901879549026489"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="983040"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="78" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_72.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.902372360229492"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="1310720"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="79" LoKey="79" HiKey="83" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_79.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913170337677002"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="1638400"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="84" LoKey="84" HiKey="90" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_84.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.955471992492676"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="1966080"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="91" LoKey="91" HiKey="120" LoVel="100" HiVel="127" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_91.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.973291873931885"
+          LowerVelocityXFade="10" SampleEnd="325662" MonolithOffset="2293760"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="48" LoKey="12" HiKey="54" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_48.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.975686073303223"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="2621440" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="55" LoKey="55" HiKey="59" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_55.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.938100099563599"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="2949120" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="66" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_60.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913049936294556"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="3276800" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="67" LoKey="67" HiKey="71" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_67.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.901879549026489"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="3604480" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="78" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_72.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.902372360229492"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="3932160" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="79" LoKey="79" HiKey="83" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_79.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913170337677002"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="4259840" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="84" LoKey="84" HiKey="90" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_84.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.955471992492676"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="4587520" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="91" LoKey="91" HiKey="120" LoVel="65" HiVel="109" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_91.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.973291873931885"
+          Volume="-8" UpperVelocityXFade="10" LowerVelocityXFade="10" SampleEnd="325662"
+          MonolithOffset="4915200" MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="48" LoKey="12" HiKey="54" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_48.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.975686073303223"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="5242880" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="55" LoKey="55" HiKey="59" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_55.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.938100099563599"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="5570560" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="66" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_60.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913049936294556"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="5898240" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="67" LoKey="67" HiKey="71" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_67.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.901879549026489"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="6225920" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="78" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_72.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.902372360229492"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="6553600" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="79" LoKey="79" HiKey="83" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_79.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913170337677002"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="6881280" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="84" LoKey="84" HiKey="90" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_84.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.955471992492676"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="7208960" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="91" LoKey="91" HiKey="120" LoVel="20" HiVel="74" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_91.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.973291873931885"
+          Volume="-10" UpperVelocityXFade="10" LowerVelocityXFade="10"
+          SampleEnd="325662" MonolithOffset="7536640" MonolithLength="327680"
+          SampleRate="44100.0"/>
+  <sample Root="48" LoKey="12" HiKey="54" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_48.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.975686073303223"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="7864320"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="55" LoKey="55" HiKey="59" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_55.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.938100099563599"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="8192000"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="60" LoKey="60" HiKey="66" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_60.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913049936294556"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="8519680"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="67" LoKey="67" HiKey="71" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_67.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.901879549026489"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="8847360"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="72" LoKey="72" HiKey="78" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_72.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.902372360229492"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="9175040"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="79" LoKey="79" HiKey="83" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_79.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.913170337677002"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="9502720"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="84" LoKey="84" HiKey="90" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_84.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.955471992492676"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="9830400"
+          MonolithLength="327680" SampleRate="44100.0"/>
+  <sample Root="91" LoKey="91" HiKey="120" LoVel="0" HiVel="29" RRGroup="1"
+          FileName="/Volumes/LaCie/!@@@ RESAMPLED SYNTHS/NEWW/NONE LOOP/ACOUSTIC/Bell Chimes/bellchimes_91.wav"
+          Duplicate="1" Normalized="1" NormalizedPeak="2.973291873931885"
+          Volume="-18" UpperVelocityXFade="10" SampleEnd="325662" MonolithOffset="10158080"
+          MonolithLength="327680" SampleRate="44100.0"/>
+</samplemap>

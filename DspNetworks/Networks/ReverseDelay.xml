@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="ReverseDelay" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="ReverseDelay" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain1" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Folded="1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="RnboReverseDelay" ParameterId="KnbDelayTimeLeft"/>
+                  <Connection NodeId="RnboReverseDelay" ParameterId="KnbDelayTimeRight"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="5000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Automated="1" SkewFactor="0.4306765580733931"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="RnboReverseDelay" ParameterId="KnbWindowCoefficient"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="RnboReverseDelay" FactoryPath="project.RnboReverseDelay"
+                    Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="10000.0" ID="KnbDelayTimeLeft" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="10000.0" ID="KnbDelayTimeRight" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbFeedback" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="KnbWindowCoefficient" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbCrossFeedback" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbWaveshapeMorph"/>
+                  <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="KnbWaveshapeFixed"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="BtnWaveShapeMorph"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="KnbDuty"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="BtnEnable" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbSmooth" Value="50.0"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbSmoothWindow"/>
+                  <Parameter MinValue="0.0" MaxValue="100.0" ID="KnbMix" Value="100.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" StepSize="0.01"
+                 Value="50.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDelayTimeFree" MinValue="0.0" MaxValue="5000.0" StepSize="1.0"
+                 Value="1000.0" SkewFactor="0.4306765580733931">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDelayTimeSync" MinValue="0.0" MaxValue="18.0" StepSize="1"
+                 Value="5.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFeedback" MinValue="0.0" MaxValue="100.0" StepSize="0.1"
+                 Value="50.0">
+        <Connections>
+          <Connection NodeId="RnboReverseDelay" ParameterId="KnbFeedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbCrossover" MinValue="0.0" MaxValue="100.0" StepSize="0.1"
+                 Value="50.0">
+        <Connections>
+          <Connection NodeId="RnboReverseDelay" ParameterId="KnbCrossFeedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbWindow" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmax" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnTempoSync" MinValue="0.0" MaxValue="1.0" StepSize="1"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

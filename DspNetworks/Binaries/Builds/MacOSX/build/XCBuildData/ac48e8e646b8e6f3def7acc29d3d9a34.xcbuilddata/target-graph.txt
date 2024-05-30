@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'DynamicFxPanel - Dynamic Library' in project 'DynamicFxPanel' (no dependencies)

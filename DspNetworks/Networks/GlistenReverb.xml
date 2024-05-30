@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="GlistenReverb" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="GlistenReverb" Bypassed="0"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="RMS"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Dry Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="Wet Gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="DRY" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Dry Gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="WET" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="Wet Gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxDecay" FactoryPath="control.minmax" Bypassed="0" NodeColour="4278199295">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="KRT Decay"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="0.75"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxShimmer" FactoryPath="control.minmax" Bypassed="0"
+                    NodeColour="4278199295">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="Shimmer"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="0.75"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmaxPitch" FactoryPath="control.minmax" Bypassed="0" NodeColour="4278192639">
+                <ModulationTargets>
+                  <Connection NodeId="faust" ParameterId="Frequency"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-24.0" MaxValue="1.0" ID="Minimum" Value="-24.0"/>
+                  <Parameter MinValue="0.0" MaxValue="24.0" ID="Maximum" Value="24.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="faust" FactoryPath="core.faust" Bypassed="0" NodeColour="4278199295">
+                <Properties>
+                  <Property ID="ClassId" Value="AllPassLoopReverb"/>
+                  <Property ID="NumParameters" Value="0"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="0.9800000190734863" StepSize="0.001000000047497451"
+                             ID="KRT Decay" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                             ID="Dry Sound" Value="0.1000000047497451"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                             ID="Reverb IN" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Freeze" Automated="1"/>
+                  <Parameter MinValue="0.01000000047497451" MaxValue="0.9900000095367432"
+                             StepSize="0.001000000047497451" ID="Shimmer" Automated="1"/>
+                  <Parameter MinValue="-24.0" MaxValue="24.0" StepSize="0.1000000014901161"
+                             ID="Frequency" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                             ID="Fine Tune" Automated="1"/>
+                </Parameters>
+                <SwitchTargets/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="KnbDryWet" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbDecay" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmaxDecay" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbShimmer" MinValue="0.0" MaxValue="100.0" Value="50.0">
+        <Connections>
+          <Connection NodeId="minmaxShimmer" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbPitch" MinValue="-24.0" MaxValue="24.0" Value="12.0">
+        <Connections>
+          <Connection NodeId="minmaxPitch" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="KnbFineTune" MinValue="-100.0" MaxValue="100.0" StepSize="0.01"
+                 Value="2.081668171172169e-17">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Fine Tune"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="BtnFreeze" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="faust" ParameterId="Freeze"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

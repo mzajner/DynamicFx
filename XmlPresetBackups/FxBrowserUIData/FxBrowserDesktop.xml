@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="FXPage" x="10.0" y="100.0" width="920.0"
+             height="480.0" itemColour="4279308566" itemColour2="4280427308"
+             textColour="518121211" bgColour="16777215" allowCallbacks="1">
+    <Component type="ScriptButton" id="FxPageButton" x="20.0" y="20.0" text="Master FX.Layer FX"
+               parentComponent="FXPage" width="160.0" height="30.0" tooltip="Alternate between effects for individual Layers and effects applied to all Layers."
+               saveInPreset="0"/>
+    <Component type="ScriptComboBox" id="FxBrowserComboBox" x="200.0" y="20.0"
+               max="15" parentComponent="FXPage" width="570.0" height="40.0"
+               fontSize="20.0" visible="0" items="Empty&#10;Compressor&#10;Detuner&#10;Flanger&#10;GlistenReverb&#10;Grains&#10;HazeDistortion&#10;Looper&#10;Phaser&#10;ReverseDelay&#10;ShredDistortion&#10;SlapbackDelay&#10;SoftClip&#10;TwistDelay&#10;Widener"/>
+    <Component type="ScriptPanel" id="FXPanelSamplers" x="0.0" y="60.0" parentComponent="FXPage"
+               width="920.0" height="420.0" allowCallbacks="1" itemColour="0"
+               itemColour2="0" bgColour="16777215" textColour="16777215">
+      <Component type="ScriptPanel" id="FxPanel1" x="20.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 bgColour="16777215" itemColour="1118486" itemColour2="2237228"
+                 textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam1" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" itemColour="4281431644" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam2" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Mid Gain" middlePosition="50.0"
+                   defaultValue="6.0" itemColour="1727987712" suffix=" dB" max="100.0"
+                   stepSize="0.1000000014901161" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam3" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Side Gain" middlePosition="50.0"
+                   stepSize="0.1000000014901161" max="100.0" defaultValue="6.0"
+                   suffix=" dB" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam4" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Mid/Side" middlePosition="50.0"
+                   suffix="%" max="100.0" stepSize="0.1000000014901161" defaultValue="50.0"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam5" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Mid Gain" middlePosition="50.0"
+                   stepSize="0.1000000014901161" max="100.0" suffix=" dB" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam6" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="$bipolar Twist"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam7" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Filter" middlePosition="50.0"
+                   mode="Frequency" defaultValue="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam8" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel1" text="Sync" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect1" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel1" isMomentary="1" width="20.0" height="20.0"
+                   filmstripImage="{PROJECT_FOLDER}Trash.png" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx1" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel1" text="ON.OFF" itemColour="1615047042"
+                   itemColour2="3155235089" processorId="FxSlot1" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel1" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel1" enabled="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel1" x="95" y="50" text="+" parentComponent="FxPanel1"
+                   enabled="0" width="90" height="90" fontSize="150" visible="0"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel2" x="20.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." itemColour2="2237228"
+                 itemColour="1118486" bgColour="16777215" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam9" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam10" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" max="100.0" stepSize="0.1000000014901161"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam11" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Glisten" middlePosition="50.0"
+                   stepSize="0.1000000014901161" max="100.0" defaultValue="50.0"
+                   suffix="%" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam12" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam13" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="$bipolar Fine Tune"
+                   middlePosition="50.0" stepSize="0.1000000014901161" suffix=" cents"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam14" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Freeze" stepSize="1.0"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam15" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Width" stepSize="0.1000000014901161"
+                   middlePosition="50.0" defaultValue="50.0" suffix="%" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam16" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel2" text="Notch" stepSize="1.0"
+                   middlePosition="50.0" defaultValue="0.5" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect2" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel2" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx2" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel2" text="ON.OFF" itemColour="1615047042"
+                   itemColour2="3155235089" processorId="FxSlot2" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel2" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel2" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel2" x="95" y="50" text="+" parentComponent="FxPanel2"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel3" x="320.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam17" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam18" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" max="100.0" stepSize="0.1000000014901161"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam19" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Glisten" middlePosition="50.0"
+                   stepSize="0.1000000014901161" max="100.0" defaultValue="50.0"
+                   suffix="%" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam20" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam21" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="$bipolar Fine Tune"
+                   stepSize="0.1000000014901161" middlePosition="50.0" suffix=" cents"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam22" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Freeze" stepSize="1.0"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam23" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Tempo Sync" stepSize="1.0"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam24" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel3" text="Notch" middlePosition="50.0"
+                   stepSize="1.0" defaultValue="0.5" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect3" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel3" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx3" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel3" text="ON.OFF" itemColour="1620363336"
+                   itemColour2="3155235089" processorId="FxSlot3" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel3" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel3" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel3" x="95" y="50" text="+" parentComponent="FxPanel3"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel4" x="320.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." itemColour2="2237228"
+                 itemColour="1118486" bgColour="16777215" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam25" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" stepSize="0.1000000014901161" suffix="%"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam26" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam27" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Glisten" stepSize="0.1000000014901161"
+                   middlePosition="50.0" suffix="%" defaultValue="50.0" max="100.0"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam28" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam29" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="$bipolar Fine Tune"
+                   stepSize="0.1000000014901161" middlePosition="50.0" max="100.0"
+                   suffix=" cents" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam30" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Freeze" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam31" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Filter" middlePosition="50.0"
+                   defaultValue="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam32" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel4" text="Tempo Sync" stepSize="1.0"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect4" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel4" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx4" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel4" text="ON.OFF" itemColour="1620363336"
+                   itemColour2="3155235089" processorId="FxSlot4" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel4" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel4" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel4" x="95" y="50" text="+" parentComponent="FxPanel4"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel5" x="620.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam33" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Dry/Wet" stepSize="0.1000000014901161"
+                   middlePosition="50.0" defaultValue="50.0" suffix="%" max="100.0"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam34" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Rate" middlePosition="50.0"
+                   defaultValue="0.5" suffix=" Hz" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam35" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Feedback" stepSize="0.1000000014901161"
+                   middlePosition="50.0" defaultValue="50.0" suffix="%" max="100.0"
+                   visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam36" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Delay Time" middlePosition="50.0"
+                   suffix=" ms" defaultValue="25.0" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam37" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Tempo" stepSize="1.0"
+                   middlePosition="50.0" defaultValue="5.0" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam38" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Tempo Sync" stepSize="1.0"
+                   middlePosition="50.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam39" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Width" stepSize="0.1000000014901161"
+                   middlePosition="50.0" defaultValue="50.0" suffix="%" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam40" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel5" text="Notch" stepSize="1.0"
+                   middlePosition="50.0" defaultValue="0.5" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect5" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel5" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx5" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel5" text="ON.OFF" itemColour="1615162309"
+                   itemColour2="3155235089" processorId="FxSlot5" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel5" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel5" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel5" x="95" y="50" text="+" parentComponent="FxPanel5"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel6" x="620.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelSamplers" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." itemColour2="2237228"
+                 itemColour="1118486" bgColour="16777215" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam41" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam42" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam43" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Glisten" middlePosition="50.0"
+                   defaultValue="50.0" stepSize="0.1000000014901161" max="100.0"
+                   suffix="%" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam44" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam45" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="$bipolar Fine Tune"
+                   middlePosition="50.0" stepSize="0.1000000014901161" suffix=" cents"
+                   max="100.0" visible="0"/>
+        <Component type="ScriptSlider" id="KnbParam46" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Freeze" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam47" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Tempo Sync" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam48" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel6" text="Notch" middlePosition="50.0"
+                   defaultValue="0.5" stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect6" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel6" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx6" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel6" text="ON.OFF" itemColour="1615162309"
+                   itemColour2="3155235089" processorId="FxSlot6" parameterId="Enabled"
+                   defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel6" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel6" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel6" x="95" y="50" text="+" parentComponent="FxPanel6"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+    </Component>
+    <Component type="ScriptPanel" id="FXPanelMaster" x="0.0" y="60.0" parentComponent="FXPage"
+               width="920.0" height="420.0" allowCallbacks="1" itemColour="0"
+               itemColour2="0" bgColour="16777215" textColour="16777215" enabled="0.0"
+               visible="0.0">
+      <Component type="ScriptPanel" id="FxPanel7" x="20.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam49" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam50" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam51" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Glisten" middlePosition="50.0"
+                   defaultValue="50.0" stepSize="0.1000000014901161" suffix="%"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam52" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam53" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="$bipolar Fine Tune"
+                   middlePosition="50.0" stepSize="0.1000000014901161" suffix=" cents"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam54" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Freeze" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam55" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Tempo Sync" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam56" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel7" text="Width" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect7" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel7" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx7" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel7" text="ON.OFF" processorId="FxSlot7"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel7" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel7" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel7" x="95" y="50" text="+" parentComponent="FxPanel7"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel8" x="320.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam57" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam58" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Shred" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam59" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Tone" middlePosition="50.0"
+                   defaultValue="100.0" suffix=" Hz" stepSize="1.0" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam60" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Makeup Gain" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam61" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Size" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam62" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam63" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Damping" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam64" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel8" text="Width" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect8" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel8" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx8" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel8" text="ON.OFF" processorId="FxSlot8"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel8" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel8" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel8" x="95" y="50" text="+" parentComponent="FxPanel8"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel9" x="620.0" y="10.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam65" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam66" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Tone" middlePosition="50.0"
+                   defaultValue="100.0" suffix=" Hz" stepSize="1.0" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam67" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Haze" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam68" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Filter" middlePosition="50.0"
+                   defaultValue="100.0" suffix=" Hz" stepSize="1.0" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam69" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Width" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam70" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Size" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam71" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam72" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel9" text="Damping" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect9" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel9" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx9" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel9" text="ON.OFF" processorId="FxSlot9"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel9" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel9" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel9" x="95" y="50" text="+" parentComponent="FxPanel9"
+                   enabled="0" width="90" height="90" fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel10" x="20.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam73" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam74" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam75" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Glisten" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam76" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam77" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="$bipolar Fine Tune"
+                   middlePosition="50.0" suffix=" cents" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam78" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Freeze" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam79" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam80" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel10" text="Damping" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect10" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel10" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx10" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel10" text="ON.OFF" processorId="FxSlot10"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel10" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel10" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel10" x="95" y="50" text="+"
+                   parentComponent="FxPanel10" enabled="0" width="90" height="90"
+                   fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel11" x="320.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam81" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam82" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Time" middlePosition="50.0"
+                   defaultValue="100.0" suffix=" ms" stepSize="1.0" visible="0"
+                   max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam83" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Size" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam84" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Probability" middlePosition="50.0"
+                   suffix="%" stepSize="0.1000000014901161" defaultValue="60.0"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam85" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Tempo" middlePosition="50.0"
+                   stepSize="1.0" defaultValue="5.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam86" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Tempo Sync" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam87" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam88" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel11" text="Damping" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect11" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel11" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx11" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel11" text="ON.OFF" processorId="FxSlot11"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel11" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel11" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel11" x="95" y="50" text="+"
+                   parentComponent="FxPanel11" enabled="0" width="90" height="90"
+                   fontSize="150"/>
+      </Component>
+      <Component type="ScriptPanel" id="FxPanel12" x="620.0" y="220.0" width="280.0"
+                 height="190.0" parentComponent="FXPanelMaster" allowCallbacks="All Callbacks"
+                 tooltip="Click on empty effect slot to load an effect." bgColour="16777215"
+                 itemColour="1118486" itemColour2="2237228" textColour="518121211">
+        <Component type="ScriptSlider" id="KnbParam89" x="0.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Dry/Wet" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam90" x="70.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Decay" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam91" x="0.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Glisten" middlePosition="50.0"
+                   defaultValue="50.0" suffix="%" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam92" x="70.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="$bipolar Pitch"
+                   middlePosition="50.0" suffix=" st" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam93" x="140.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="$bipolar Fine Tune"
+                   middlePosition="50.0" suffix=" cents" stepSize="0.1000000014901161"
+                   visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam94" x="210.0" y="30.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Freeze" middlePosition="50.0"
+                   stepSize="1.0" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam95" x="140.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Damping" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptSlider" id="KnbParam96" x="210.0" y="110.0" width="70"
+                   height="80" parentComponent="FxPanel12" text="Size" middlePosition="50.0"
+                   defaultValue="0.5" suffix="%" visible="0" max="100.0"/>
+        <Component type="ScriptButton" id="BtnRemoveEffect12" x="250" y="10" text="Dump Effect"
+                   parentComponent="FxPanel12" isMomentary="1" filmstripImage="{PROJECT_FOLDER}Trash.png"
+                   height="20.0" width="20.0" scaleFactor="0.6666666865348816"/>
+        <Component type="ScriptButton" id="BtnEnableFx12" x="10.0" y="10.0" width="60.0"
+                   height="20.0" parentComponent="FxPanel12" text="ON.OFF" processorId="FxSlot12"
+                   parameterId="Enabled" defaultValue="1.0"/>
+        <Component type="ScriptLabel" id="FxLabel12" x="70" y="10" text="" width="140"
+                   height="20" fontSize="16" parentComponent="FxPanel12" enabled="0"
+                   visible="0"/>
+        <Component type="ScriptLabel" id="FxPlusLabel12" x="95" y="50" text="+"
+                   parentComponent="FxPanel12" enabled="0" width="90" height="90"
+                   fontSize="150"/>
+      </Component>
+    </Component>
+    <Component type="ScriptPanel" id="FxMenuBlurPanel" x="310.0" y="50.0" width="300.0"
+               height="400.0" itemColour="4093640704" itemColour2="3405774848"
+               parentComponent="FXPage" visible="0"/>
+    <Component type="ScriptPanel" id="FxMenu1" x="320.0" y="60.0" width="280.0"
+               height="180" parentComponent="FXPage" visible="0"/>
+    <Component type="ScriptPanel" id="FxMenuDisplayPanel" x="320" y="20" width="280"
+               height="30" allowCallbacks="Clicks &amp; Hover" parentComponent="FXPage">
+      <Component type="ScriptLabel" id="FxDisplayLabel" x="50" y="0" parentComponent="FxMenuDisplayPanel"
+                 text="Select Effect" fontSize="20" textColour="4294309365" editable="0"/>
+    </Component>
+  </Component>
+  <Component type="ScriptButton" id="SaveButton" x="10.0" y="10.0" text="Save Preset"/>
+  <Component type="ScriptButton" id="LoadButton" x="10.0" y="50.0" text="Load Preset"/>
+  <Component type="ScriptPanel" id="PRESET_Bar" x="315.0" y="30.0" width="330.0"
+             height="35.0" borderSize="1.0" borderRadius="10.0">
+    <Component type="ScriptButton" id="PRESET_Opener" x="0.0" y="2.0" text="PRESET BROWSER"
+               width="280.0" height="30.0" bgColour="112347" itemColour="112347"
+               itemColour2="112347" parentComponent="PRESET_Bar" isMomentary="1"
+               visible="0"/>
+    <Component type="ScriptPanel" id="UpButton" x="300.0" y="6.0" width="15.0"
+               height="20.0" tooltip="Load next user preset" parentComponent="PRESET_Bar"
+               allowCallbacks="Clicks &amp; Hover"/>
+    <Component type="ScriptPanel" id="DownButton" x="279.0" y="6.0" width="15.0"
+               height="20.0" tooltip="Load previous user preset" parentComponent="PRESET_Bar"
+               allowCallbacks="Clicks &amp; Hover"/>
+    <Component type="ScriptPanel" id="PresetDisplay" x="26.0" y="2.0" width="250.0"
+               height="30.0" tooltip="Your current preset" parentComponent="PRESET_Bar"/>
+  </Component>
+  <Component type="ScriptPanel" id="PRESET_Container" x="10.0" y="100.0" borderSize="1.0"
+             borderRadius="0.0" width="300.0" height="160.0" visible="0"/>
+  <Component type="ScriptButton" id="PRESET_Closer" x="850.0" y="8.0"/>
+  <Component type="ScriptPanel" id="hiddenPanel" x="350.0" y="658.0"/>
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="20.0" y="620.0"
+             width="900.0" height="70.0" ContentType="Keyboard" bgColour="4284769380"
+             itemColour="452984831" itemColour2="4294967295" textColour="0"
+             Data="{&#10;  &quot;KeyWidth&quot;: 14.0,&#10;  &quot;DisplayOctaveNumber&quot;: false,&#10;  &quot;LowKey&quot;: 9,&#10;  &quot;HiKey&quot;: 127,&#10;  &quot;CustomGraphics&quot;: false,&#10;  &quot;DefaultAppearance&quot;: true,&#10;  &quot;BlackKeyRatio&quot;: 0.699999988079071,&#10;  &quot;ToggleMode&quot;: false,&#10;  &quot;MidiChannel&quot;: 1,&#10;  &quot;UseVectorGraphics&quot;: true,&#10;  &quot;UseFlatStyle&quot;: false,&#10;  &quot;MPEKeyboard&quot;: false,&#10;  &quot;MPEStartChannel&quot;: 2,&#10;  &quot;MPEEndChannel&quot;: 16&#10;}"/>
+  <Component type="ScriptSlider" id="Knob1" x="257.0" y="58.0" stepSize="0.009999999776482582"/>
+</ContentProperties>
